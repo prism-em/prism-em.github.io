@@ -1,143 +1,105 @@
 # --- General options --- #
 
+# url is the full website URL
+# baseurl is the website's URL without the 
+
+# If you are building a simple GitHub user page (http://username.github.io) then use these settings:
+url: "http://prism-em.github.io"
+baseurl: ""
+
+# If you are building a GitHub project page then use these settings:
+#url: "http://username.github.io/projectname"
+#baseurl: "/projectname"
+
+# Of course don't forget to change the username and projectname to YOUR username and project
+
 # Name of website
-title: My website
+title: Prismatic Software For STEM Simulation
 
 # Short description of your site
-description: A virtual proof that I'm awesome
-
-# --- Local development options ---
-# If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
-# *** If you're not sure what this mean, then leave this section as it is. Only modify the url and baseurl if you know what you're doing!***
-
-# url is the the website domain URL without a trailing slash
-#url: "https://example.com"
-
-# baseurl should be an empty string
-#baseurl: ""
+description: Documentation, tutorials, and source code for the software package Prismatic, a GPU implementation of image simulation algorithms in scanning transmission electron microscopy (STEM)
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
-navbar-links:
-  About Me: "aboutme"
+navbar-links: 
+  Downloads:
+    - Source Code: "http://github.com/prism-em/prismatic"
+    - GUI Programs: "downloads-binaries"
+    - Atomic Coordinates: "downloads-coordinates"
+  Documentation:
+    - Change Log: "docs-change-log"
+    - Input Parameters: "docs-params"
+    - Input File Format: "docs-inputs"
+    - Output File Format: "docs-outputs"
+    - Compiling Prismatic: "docs-compiling"
+    - Packaging Prismatic: "docs-packaging"
+    - Source Code Walkthrough: "docs-source-code-walkthrough"  
   Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-  Author's home: "http://deanattali.com"
+    - STEM Simulations: "tutorial-STEM"
+    - GUI Tutorials: "tutorial-GUI"    
+    - Python Tutorials: "tutorial-python"
+    - Analysis of STEM Data: "resources-analysis-codes"
+    - Other STEM Simulation Codes: "resources-sim-codes"
+  About:
+    - About the Authors: "about-authors"
+    - Citing Prismatic: "about-cite"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/avatar-icon.png"
+avatar: "/img/prism.png"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
 # title-img: /path/to/image
-
-# --- Background colour/image options --- #
-
-# Personalize the colors in your website. Colour values can be any valid CSS colour
-
-navbar-col: "#F5F5F5"
-navbar-text-col: "#404040"
-navbar-children-col: "#F5F5F5"
-page-col: "#FFFFFF"
-link-col: "#008AFF"
-hover-col: "#0085A1"
-footer-col: "#F5F5F5"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
-
-# Alternatively, the navbar, footer, and page background can be set to use background images
-# instead of colour
-
-# navbar-img: "/img/bgimage.png"
-# footer-img: "/img/bgimage.png"
-# page-img: "/img/bgimage.png"
 
 # --- Footer options --- #
 
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Some Person
+  name: Alan (AJ) Pryor, Jr.
+  email: "apryor6@gmail.com"
+  github: prism-em
 
-# Select your active Social Network Links.
-# Uncomment the links you want to show in the footer and add your information to each link.
-# You can reorder the items to define the link order.
-# If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
-social-network-links:
-  rss: true
-  email: "someone@example.com"
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-#  reddit: yourname
-#  linkedin: daattali
-#  xing: yourname
-#  stackoverflow: "3943160/daattali"
-#  snapchat: deanat78
-#  instagram: deanat78
-#  youtube: user/deanat78
-#  spotify: yourname
-#  telephone: +14159998888
-#  steam: deanat78
-#  twitch: yourname
-#  yelp: yourname
+# Select which links to show in the footer
+footer-links-active:
+  rss: false
+  facebook: false
+  email: false
+  twitter: false
+  google-plus: false
+  github: true
+  reddit: false
+  linkedin: false
+  xing: false
+  stackoverflow: false
+  snapchat: false
+  instagram: false
+  youtube: false
+  spotify: false
+  telephone: false
 
 # Select which share links to show in posts
 share-links-active:
   twitter: true
   facebook: true
+  google: false
   linkedin: true
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "PRISM-em.com"  # eg. "deanattali.com/beautiful-jekyll"
 
-# --- Web Statistics Section --- #
-
-# Fill in your Google Analytics gtag.js ID to track your website using gtag
-#gtag: ""
+# --- Misc --- #
+# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
+#disqus: ""
 
 # Fill in your Google Analytics ID to track your website using GA
 #google_analytics: ""
 
 # Google Tag Manager ID
 #gtm: ""
-
-# Matomo (aka Piwik) Web statistics
-# Uncomment the following section to enable Matomo. The opt-out parameter controls
-# whether or not you want to allow users to opt out of tracking.
-
-#matomo:
-#  site_id: "9"
-#  uri: "demo.wiki.pro"
-#  opt-out: true
-
-# --- Comments --- #
-
-# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-# disqus: ""
-
-# If you want to use JustComments fill with the API Key
-#just-comments: "ABCD-EFGH-IJKL"
-
-# To use Facebook Comments, fill in a Facebook App ID
-# fb_comment_id: ""
-
-# To use Staticman comments, fill in repository, branch, and endpoint
-staticman:
-  repository : # GitHub username/repository eg. "daattali/beautiful-jekyll"
-  branch     : master # If you're not using `master` branch, then you also need to update the `branch` parameter in `staticman.yml`
-  endpoint   : # URL of your own deployment, with a trailing slash (will fallback to a public GitLab instance) eg. https://<your-api>/v3/entry/github/
-  reCaptcha:
-    # reCaptcha for Staticman (OPTIONAL, but recommended for spam protection)
-    # If you use reCaptcha, you must also set these parameters in staticman.yml
-    siteKey  : # Use your own site key, you need to apply for one on Google
-    secret   : # ENCRYPT your password by going to https://staticman3.herokuapp.com/v3/encrypt/<your-site-secret>
-
-# --- Misc --- #
 
 # Facebook App ID
 # fb_app_id: ""
@@ -149,9 +111,6 @@ excerpt_length: 50
 # Character used to separate site title and description in HTML document title
 # and RSS feed title
 title-separator: "-"
-
-# Ruby Date Format
-date_format: "%B %-d, %Y"
 
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
@@ -182,8 +141,9 @@ defaults:
       layout: "page"
       show-avatar: true
 
-# Use tags index page and make tags on each post clickable
-link-tags: true
+# Use tags pages (not recommended if you are deploying via GitHub pages, only set to true if deploying locally with ruby)
+link-tags: false
+
 
 # Exclude these files from production site
 exclude:
@@ -248,9 +208,10 @@ prose:
           label: "Publish"
           help: "Check to publish post, uncheck to hide."
 
-plugins:
+gems:
   - jekyll-paginate
-  - jekyll-sitemap
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
+
+theme: jekyll-theme-slate
