@@ -32,17 +32,3 @@ Where prismatic-gui.icns was made following [this blog post](https://blog.macsal
 
  Info.plist is a basic XML file with the following contents
 
-## Windows 10
-
-Configure/compile with `PRISMATIC_ENABLE_GUI=1` with CMake + Visual Studio (I use MSVS 2015) 64-bit. Set to Release mode and build the solution. Then you must copy the following .dll files into the Release directory containing prismatic-gui.exe
-
-* libfftw3f-3.dll
-* Qt5Core.dll
-* Qt5Widgets.dll
-* Qt5Gui.dll
-
-Colin indicated that it may also be necessary to include the plugins/platforms/ folder from within Qt 5. I did not need this folder when compiling and running on machines all using Windows 10, but maybe this folder is necessary when distributing to older versions, so I include it to be safe.
-
-To add the icon to the executable, open the solution in Visual Studio. Open the resources view `view -> Other Windows -> Resources View`, right click `prismatic-gui` and select `Add -> Resource` highlight Icon and click `Import`, choose the ".ico" file, and recompile. The ".ico" file was generated from a .png image using the online resource [convertIcon!](www.converticon.com). Sometimes this process is very finicky and you may need to manually edit the .rc and resource.h files to have lines `MAINICON ICON /path/to/ico` and `#define MAINICON 101` -- the compiler will use the lowest-numbered icon as the main application icon.
-
-To create a deployment package, create a new Visual Studio project `File -> New -> Project -> Other Project Types -> Visual Studio Installer`. The first time I did this I did not see this option available and had to install an external plugin to make this option appear. Next, add all of the files in the bundle (including the platforms folder) to "Application Folder", and then edit the metadata for the project such as the company name, version number, target platform (change to x64), etc by selecting `View -> Solution Explorer` and editing the fields in Project Properties. Right click `prismatic-gui.exe` and create a shortcut and copy it into Users Desktop. Repeat for User's Program menu. Then right click the Application Folder, make a shortcut, and drag that to User's program menu. Left click each of these and set the Icon in the properties tab. This will install a desktop shortcut to the GUI and links in the start menu. Then build the solution to produce the .msi installer that may be distributed. Set the application icon under the Properties tab of the solution with `AddRemoveProgramsIcon` and set `AlwaysCreate` to True for the Application Folder.
