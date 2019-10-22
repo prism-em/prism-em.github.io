@@ -1,5 +1,5 @@
 ---
-title: SuperSTEM 2018 GUI tutorial
+title: SuperSTEM 2018 GUI Tutorial
 subtitle: Performing Prismatic simulations using the GUI
 ---
 
