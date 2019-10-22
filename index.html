@@ -16,41 +16,41 @@ use-site-title: true
 	    {{ post.subtitle }}
 	  </h3>
 	  {% endif %}
-    </a>
-
-    <p class="post-meta">
-      Posted on {{ post.date | date: site.date_format }}
-    </p>
-
-    <div class="post-entry-container">
-      {% if post.image %}
-      <div class="post-image">
-        <a href="{{ post.url | relative_url }}">
-          <img src="{{ post.image | relative_url }}">
-        </a>
-      </div>
-      {% endif %}
-      <div class="post-entry">
-        {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
-        {% assign excerpt_word_count = post.excerpt | number_of_words %}
-        {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
-          <a href="{{ post.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
-        {% endif %}
-      </div>
-    </div>
-
-    {% if post.tags.size > 0 %}
-    <div class="blog-tags">
-      Tags:
-      {% if site.link-tags %}
-      {% for tag in post.tags %}
-      <a href="{{ '/tags' | relative_url }}#{{- tag -}}">{{- tag -}}</a>
-      {% endfor %}
-      {% else %}
-        {{ post.tags | join: ", " }}
-      {% endif %}
-    </div>
-    {% endif %}
+	</a>
+	
+	<p class="post-meta">
+	  Posted on {{ post.date | date: site.date_format }}
+	</p>
+	
+	<div class="post-entry-container">
+	  {% if post.image %}
+	  <div class="post-image">
+	    <a href="{{ post.url | relative_url }}">
+	      <img src="{{ post.image | relative_url }}">
+	    </a>
+	  </div>
+	  {% endif %}
+	  <div class="post-entry">
+	    {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
+	    {% assign excerpt_word_count = post.excerpt | number_of_words %}
+	    {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
+	      <a href="{{ post.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
+	    {% endif %}
+	  </div>
+	</div>
+	
+	{% if post.tags.size > 0 %}
+	<div class="blog-tags">
+	  Tags:
+	  {% if site.link-tags %}
+	  {% for tag in post.tags %}
+	  <a href="{{ '/tags' | relative_url }}#{{- tag -}}">{{- tag -}}</a>
+	  {% endfor %}
+	  {% else %}
+	    {{ post.tags | join: ", " }}
+	  {% endif %}
+	</div>
+	{% endif %}
 
    </article>
   {% endfor %}
@@ -70,3 +70,56 @@ use-site-title: true
   {% endif %}
 </ul>
 {% endif %}
+
+
+
+
+<p> <span style="background-color: #FFDDDD"><font color="#FF0000" face="Courier New">Prismatic</font></span> version 1.2 is now officially released!  If you would like to stay informed about future releases, request help, or donate your time for development, we strongly encourage you to join the <a href="https://groups.google.com/forum/#!forum/prismatic-and-prism">Prismatic mailing list</a>.
+</p>
+
+<p> New to <span style="background-color: #FFDDDD"><font color="#FF0000" face="Courier New">Prismatic</font></span> and STEM simulation?  We suggest starting by downloading and installing the newest GUI verison of <span style="background-color: #FFDDDD"><font color="#FF0000" face="Courier New">Prismatic</font></span>, and going through the  <a href="/tutorial-SuperSTEM">SuperSTEM 2018 GUI Tutorial</a>
+</p>
+
+
+
+<center><img src="img/front-page-figure-v01.png" alt="Prismatic GUI" width=600></center>
+{% if paginator.total_pages > 1 %}
+<ul class="pager main-pager">
+  {% if paginator.previous_page %}
+  <li class="previous">
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+  </li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li class="next">
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}
+
+<p>
+<span style="background-color: #FFDDDD"><font color="#FF0000" face="Courier New">Prismatic</font></span> is the name of our simulation code which performs quantum-mechanical simulation of images and diffraction patterns for scanning transmission electron microscopy (STEM).  STEM experiments are routinely used for atomic-resolution imaging of samples in materials science and other fields. STEM simulations are difficult primarily because of the "scanning" aspect, where the electron probe is moved over the sample surface - each new probe location requires a full multiple-scattering simulation, and STEM images often contain millions of pixels.
+</p>
+
+<p>
+<span style="background-color: #FFDDDD"><font color="#FF0000" face="Courier New">Prismatic</font></span> is a CUDA/C++/Python software package for fast image simulation in scanning transmission electron microscopy (STEM). It includes parallel, data-streaming implementations of both the plane-wave reciprocal-space interpolated scattering matrix (PRISM) and multislice algorithms using multicore CPUs and CUDA-enabled GPU(s), in some cases achieving accelerations as high as 1000x or more relative to traditional methods. *Prismatic* is fast, free, open-sourced, and contains a graphical user interface.
+</p>
+
+</p>
+<span style="background-color: #FFDDDD"><font color="#FF0000" face="Courier New">Prismatic</font></span> is an implementation of two related algorithms for STEM simulation:
+</p>
+
+<ul>
+  <li><b>Multislice</b></li> 
+  In this method, we use first compute the projected potentials from a set of atomic coordinates. Next, for all STEM probes, we solve the Schrodinger equation for fast electrons using a split-step method, where we alternate between the transmission operator (which gives the phase shift atoms impart onto the electron wave) and the propagation operator (describing free-space propagation of the electron wave).
+</ul> 
+
+<ul>  
+  <li><b>PRISM</b></li>
+  Multslice STEM simulations can be quite slow, because the scattering of each new STEM probe is recomputed from scratch. An alternative is to use the multislice method to compute a scattering matrix, which is then used to construct each STEM probe. This algorithm often requires roughly the same computational time as the mutlislice method, but also allows for huge speed-ups by using Fourier interpolation of the scattering matrix. Thus we call this approach the plane-wave recriprocal-space interpolated scattering matrix (PRISM) algorithm.
+</ul>  
+
+<p>
+We have released <span style="background-color: #FFDDDD"><font color="#FF0000" face="Courier New">Prismatic</font></span>  as open source code for the benefit of the microscopy community. While we tried to extensively test it, please keep in mind that <span style="background-color: #FFDDDD"><font color="#FF0000" face="Courier New">Prismatic</font></span> is beta software. We take no responsibility for any errors or inaccuracies caused by using <span style="background-color: #FFDDDD"><font color="#FF0000" face="Courier New">Prismatic</font></span>, and we strongly recommend that all users carefully test the convergence and accuracy of their simulations.
+</p>
