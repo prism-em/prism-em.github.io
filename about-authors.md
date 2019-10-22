@@ -6,7 +6,7 @@ title: About the Authors
 
 ### Current Contributors
 
-[Dr. Colin Ophus](https://foundry.lbl.gov/about/staff/colin-ophus/) is currently a research scientist at the National Center for Electron Microscopy (NCEM) at Lawrence Berkeley National Labs in Berkeley, California. He can be contacted via email at clophus@lbl.gov. You can find out more about his research on [Google Scholar](https://scholar.google.com/citations?hl=en&user=h5MPYJAAAAAJ&view_op=list_works&sortby=pubdate)
+[Dr. Colin Ophus](https://foundry.lbl.gov/about/staff/colin-ophus/) is currently a research scientist at the National Center for Electron Microscopy (NCEM) at Lawrence Berkeley National Labs in Berkeley, California. He can be contacted via email at clophus@lbl.gov. You can find out more about his research on [Google Scholar](https://scholar.google.com/citations?hl=en&user=h5MPYJAAAAAJ&view_op=list_works&sortby=pubdate).
 
 [Dr. Hamish Brown](https://scholar.google.com.au/citations?user=QN2mSeoAAAAJ&hl=en) is currently working as a Postdoctoral Researcher at the National Center for Electron Microscopy at Lawrence Berkeley.  Dr. Brown completed his Ph.D. in Theoretical Condensed Matter Physics at the University of Melbourne under the advisement of Prof. Les Allen, and a previous Postdoctoral appointment at the Monash University, Melbourne with Dr. Scott Findlay. His research interests include image simulation and retrieval of structural information in electron microscopy.
 
