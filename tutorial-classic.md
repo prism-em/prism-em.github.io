@@ -1,5 +1,5 @@
 ---
-title: Classic GUI tutorial
+title: Classic GUI Tutorial
 subtitle: Performing Prismatic simulations using the GUI
 ---
 
