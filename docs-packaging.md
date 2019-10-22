@@ -33,20 +33,13 @@ Where prismatic-gui.icns was made following [this blog post](https://blog.macsal
  Info.plist is a basic XML file with the following contents
 
 
+To distribute the package as a .dmg volume, copy the package to a new, empty folder, open Disk Utility and select `File -> New Image -> Image from folder`, select the folder containing the app, and set privileges to read/write. Mount the drive by double-clicking the image file, and then right click and select `Show View Options`. From here you can customize the size of the icons and change the background. To make a drag-and-drop installer, add a link to /Applications by opening a terminal, navigating to the mounted .dmg (likely in /Volumes/) and invoking the following command
+
 ~~~
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-  <key>CFBundleExecutable</key>
-  <string>prismatic-gui</string>
-  <key>CFBundleName</key>
-  <string>prismatic-gui</string>
-  <key>CFBundleIconFile</key>
-  <string>prismatic-gui.icns</string>
-</dict>
-</plist>
+ln -s /Applications Applications
 ~~~
+
+You should then see the app and the Applications folder in the volume. 
 
 ## Windows 10
 
