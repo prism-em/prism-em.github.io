@@ -58,8 +58,8 @@ avatar: "/img/prism.png"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Alan (AJ) Pryor, Jr.
-  email: "apryor6@gmail.com"
+  name: Colin Ophus
+  email: "cophus@gmail.com"
   github: prism-em
 
 # Select which links to show in the footer
