@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Title
-subtitle: subtitle
+image: /img/hello_world.jpeg
 ---
 
 
