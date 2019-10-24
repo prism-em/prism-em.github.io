@@ -1,7 +1,11 @@
+---
+title: Source Code Walkthrough
+subtitle: Detailed description of the Prismatic code.
+---
 
 _Written by AJ Pryor Jr_
 
-Just because a project is open source doesn’t mean that it is immediately obvious how all of its moving parts fit together. I’ve spent a lot of time thinking about _Prismatic_ and how to design it from a software engineering perspective, and I’m fairly satisfied with the result. This document is meant to be a sort of tour through the source code of _Prismatic_ in a much more casual environment than a formal academic paper. This is not a tutorial for how to use the code (for more information see [here](/docs-params/), but rather an explanation of the code itself. Thus it is more focused towards developers and less so to most users. For those of you who haven’t frantically closed the browser at this point, I hope that you find it useful either as a GPU programming example, or as a guide to become a future developer of _Prismatic_ itself.
+Just because a project is open source doesn’t mean that it is immediately obvious how all of its moving parts fit together. I’ve spent a lot of time thinking about _Prismatic_ and how to design it from a software engineering perspective, and I’m fairly satisfied with the result. This document is meant to be a sort of tour through the source code of _Prismatic_ in a much more casual environment than a formal academic paper. This is not a tutorial for how to use the code (for more information see [here](http://prism-em.com/docs-params/)), but rather an explanation of the code itself. Thus it is more focused towards developers and less so to most users. For those of you who haven’t frantically closed the browser at this point, I hope that you find it useful either as a GPU programming example, or as a guide to become a future developer of _Prismatic_ itself.
 
 ## Table of Contents
 
