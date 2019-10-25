@@ -8,11 +8,9 @@ subtitle: Performing Prismatic simulations using the GUI
 
 *Tutorial by Colin Ophus (clophus 'at' lbl.gov)*
 
+*Note that this tutorial was designed for `Prismatic`  version 1.1 - however it should be fully compatible with the current version.*
 
 
-*Note that this tutorial was designed for `Prismatic`  version 1.1 - however it should be fully compatible with the current version of `Prismatic` .*
-
-## 
 
 ## Table of Contents  
 - [1 - Install `Prismatic`](#step1)
@@ -29,6 +27,7 @@ subtitle: Performing Prismatic simulations using the GUI
 
 <a name="step1"></a>
 &nbsp;
+
 ## 1 - Download and Install the `Prismatic` GUI.
 
 The `Prismatic` GUI has been compiled for both Windows and OSX. For each of these operating systems, there are two possible versions of Prismatic you may wish to install.
