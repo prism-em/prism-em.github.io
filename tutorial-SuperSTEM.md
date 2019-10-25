@@ -8,6 +8,12 @@ subtitle: Performing Prismatic simulations using the GUI
 
 *Tutorial by Colin Ophus (clophus 'at' lbl.gov)*
 
+
+
+*Note that this tutorial was designed for `Prismatic`  version 1.1 - however it should be fully compatible with the current version of `Prismatic` .*
+
+## 
+
 ## Table of Contents  
 - [1 - Install `Prismatic`](#step1)
 - [2 - Load atomic coordinates](#step2)
@@ -128,7 +134,7 @@ For this tutorial, we will use a **Pixel Size** value of <span style="color:red"
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;\lambda = "/> 0.037 Angstroms
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;q_{max} = "/> 92.5 mrads
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\alpha_{max} = "/> 92.5 mrads
 
 The next value  **Potential Bound** specifies how far from the atomic core we will integrate the projected potentials. Set this value to <span style="color:red">**2 Angstroms**</span> for reasonable accuracy.
 
