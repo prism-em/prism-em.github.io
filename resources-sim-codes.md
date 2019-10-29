@@ -28,5 +28,7 @@ subtitle: Alternatives to Prismatic for STEM simulation
 | *FDES* | Van den Broek et al. | multi-GPU par |  [FDES repo](https://github.com/woutervandenbroek/FDES) |
 | *uSTEM* |  D'Alfonso et al. | GPU par., inelastic | [uSTEM website](http://tcmp.ph.unimelb.edu.au/mustem/muSTEM.html) |
 |  *STEMsalabim*  | Oelerich et al. | CPU par | [STEMsalabim website](http://www.online.uni-marburg.de/stemsalabim/) |
+|  *stemcl*  | Radek, Tenberge, Hilke, Wilde, Peterlechner | OpenCL GPU and CPU | [stemcl repo](https://github.com/stemcl/stemcl) |
 |  `Prismatic`  | Ophus, Pryor, Rangel Dacosta, Brown, et al., | multi CPU GPU, PRISM | [Prismatic website](http://www.prism-em.com) |
+
 
