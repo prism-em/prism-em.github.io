@@ -22,7 +22,7 @@ Within the source code of `Prismatic` is an "examples" folder that contains some
 <a name="pyprismatic"></a>
 ## PyPrismatic: Using Prismatic through Python  
 
-*Instructions for installing `PyPrismatic` may be found at [here](installation.md)*
+*Instructions for installing `PyPrismatic` may be found at [here](/docs-compiling/#python-installing-pyprismatic)*
 
 To run a simulation with `PyPrismatic`, you simple create a `Metadata` object, adjust the parameters, and then execute the calculation with the `go` method. A list of adjustable parameters is [in the About section](http://www.prism-em.com/about). These parameters can either be set with keyword arguments when constructing the `Metadata` object, or directly with the `.` operator. A simple example script utilizing both methods of setting parameters follows where the hypothetical input atomic coordinate information exists in the file "myInput.XYZ", the electron energy is set to 100 keV, and a 3x3x3 unit cell tiling is desired. The remaining parameters will be set to the default values (the `toString()` method can be used to print out all of the current settings).
 
