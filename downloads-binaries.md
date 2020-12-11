@@ -18,6 +18,7 @@ subtitle: Download binary installation files for Prismatic
 ### Mac OS X
 v1.2.1 installer coming soon.
 
+
 ## Source Code
 [Current Build](http://www.github.com/prism-em/prismatic)
 

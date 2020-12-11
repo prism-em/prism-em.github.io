@@ -21,6 +21,7 @@ navbar-links:
   Downloads:
     - Source Code: "https://github.com/prism-em/prismatic"
     - GUI Programs: "downloads-binaries"
+    - Conda-forge: "downloads-conda-forge"
     - Atomic Coordinates: "downloads-coordinates"
   Documentation:
     - Change Log: "docs-change-log"
