@@ -20,15 +20,14 @@ v1.2.1 installer coming soon.
 
 ## Conda-forge packages
 
-GPU or CPU Prismatic binaries are packaged on [conda-forge](https://conda-forge.org) for Windows, MacOS and Linux. They can be installed easily in an Anaconda/Miniconda distribution using the conda package manager.
+GPU or CPU Prismatic binaries are packaged on [conda-forge](https://conda-forge.org) for Windows, MacOS and Linux. They can be installed easily in an Anaconda/Miniconda distribution using the [conda](https://docs.conda.io) or [mamba](https://github.com/mamba-org/mamba) package manager.
 
 To install all variants of prismatic, run from an Anaconda command prompt:
 
 ~~~
 conda install prismatic -c conda-forge
 ~~~
-If a CUDA compatible GPU is available, the GPU packages (linux only) will be selected by default and a cudatoolkit [compatible with your GPU](https://docs.nvidia.com/deploy/cuda-compatibility/index.html) (Kepler and above) will be installed automatically.
-To switch to CPU packages, see instructions below. If you don't want to install all variants, you can install them separately.
+If a CUDA compatible GPU is available, the GPU packages will be selected by default and a cudatoolkit [compatible with your GPU](https://docs.nvidia.com/deploy/cuda-compatibility/index.html) (Kepler and above) will be installed automatically. Otherwise, the CPU will be selected. To switch or explicitely select CPU packages, see instructions below. If you don't want to install all variants, you can install them separately.
 
 To install prismatic CLI (`prismatic-cli` and `prismatic-double` for double precision):
 ~~~
