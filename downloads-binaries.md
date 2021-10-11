@@ -21,6 +21,7 @@ We highly recommend installing the most recent version of Prismatic. The most re
 ### Mac OS X
 No installers currently available for Prismatic 2.0 for Mac OS X.
 
+
 ## Source Code
 [Current Build](http://www.github.com/prism-em/prismatic)
 
