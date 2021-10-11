@@ -13,59 +13,81 @@ The following options are available with `prismatic` (you can also print availab
 
 Basic usage is prismatic -i filename [other options]:
 
-* --input-file (-i) filename :  filename containing the atomic coordinates, see www.prism-em.com/about for details (default: /path/to/atoms.txt)
-* --param-file (-pf) filename : filename containing simulation parameters. This optional file can contain any number of parameters in the form of a text file with one entry per line of the form param:value.
-* --output-file(-o) filename : output filename (default: output.h5)
-* --interp-factor (-f) number : PRISM interpolation factor, used for both X and Y (default: 4)
-* --interp-factor-x (-fx) number : PRISM interpolation factor in X (default: 4)
-* --interp-factor-y (-fy) number : PRISM interpolation factor in Y (default: 4)
-* --num-threads (-j) value : number of CPU threads to use (default: 12)
-* --num-streams (-S) value : number of CUDA streams to create per GPU (default: 3)
-* --num-gpus (-g) value : number of GPUs to use. A runtime check is performed to check how many are actually available, and the minimum of these two numbers is used. (default: 4)
-* --slice-thickness (-s) thickness : thickness of each slice of projected potential (in Angstroms) (default: 2)
-* --num-slices (-ns) number of slices: in multislice mode, number of slices before intermediate output is given (default: 0)
-* --zstart-slices (-zs) value: in multislice mode, depth Z at which to begin intermediate output (default: 0)
-* --batch-size (-b) value : number of probes/beams to propagate simultaneously for both CPU and GPU workers. (default: 1)
-* --batch-size-cpu (-bc) value : number of probes/beams to propagate simultaneously for CPU workers. (default: 1)
-* --batch-size-gpu (-bg) value : number of probes/beams to propagate simultaneously for GPU workers. (default: 1)
-* --help(-h) : print information about the available options
-* --pixel-size (-p) pixel_size : size of simulated potential/probe X/Y pixel size (default: 0.1). Note this is different from the size of a pixel in the output, which is determined by probe_stepX(Y)
-* --pixel-size-x (-px) pixel_size : size of simulated potential/probe X pixel size (default: 0.1). Note this is different from the size of a pixel in the output, which is determined by probe_stepX(Y)
-* --pixel-size-y (-py) pixel_size : size of simulated potential/probe Y pixel size (default: 0.1). Note this is different from the size of a pixel in the output, which is determined by probe_stepX(Y)
-* --detector-angle-step (-d) step_size : angular step size for detector integration bins (in mrad) (default: 1)
-* --cell-dimension (-c) x y z : size of sample in x, y, z directions (in Angstroms) (default: 20 20 20)
-* --tile-uc (-t) x y z : tile the unit cell x, y, z number of times in x, y, z directions, respectively (default: 1 1 1)
-* --algorithm (-a) p/m : the simulation algorithm to use, either (p)rism or (m)ultislice (default: PRISM)
-* --energy (-E) value : the energy of the electron beam (in keV) (default: 80)
-* --alpha-max (-A) angle : the maximum probe angle to consider (in mrad) (default: 24)
-* --potential-bound (-P) value : the maximum radius from the center of each atom to compute the potental (in Angstroms) (default: 2)
-* --also-do-cpu-work (-C) bool=true : boolean value used to determine whether or not to also create CPU workers in addition to GPU ones (default: 1)
-* --streaming-mode 0/1 : boolean value to force code to use (true) or not use (false) streaming versions of GPU codes. The default behavior is to estimate the needed memory from input parameters and choose automatically. (default: Auto)
-* --probe-step (-r) step_size : step size of the probe for both X and Y directions (in Angstroms) (default: 0.25)
-* --probe-step-x (-rx) step_size : step size of the probe in X direction (in Angstroms) (default: 0.25)
-* --probe-step-y (-ry) step_size : step size of the probe in Y direction (in Angstroms) (default: 0.25)
-* --random-seed (-rs) step_size : random integer number seed
-* --probe-xtilt (-tx) value : probe X tilt (in mrad) (default: 0)
-* --probe-ytilt (-ty) value : probe X tilt (in mrad) (default: 0)
-* --probe-defocus (-df) value : probe defocus (in Å) (default: 0)
-* -C3 value : microscope C3 aberration constant (in Angstrom) (default: 0)
-* -C5 value : microscope C5 aberration constant (in Angstrom) (default: 0)
-* --probe-semiangle (-sa) value : maximum probe semiangle (in mrad) (default: 20)
-* --scan-window-x (-wx) min max : size of the window to scan the probe in X (in fractional coordinates between 0 and 1) (default: 0 0.99999)
-* --scan-window-y (-wy) min max : size of the window to scan the probe in Y (in fractional coordinates between 0 and 1) (default: 0 0.99999)
-* --scan-window-xr (-wxr) min max : size of the window to scan the probe in X (in Angstroms) (defaults to fractional coordinates) )
-* --scan-window-yr (-wyr) min max : size of the window to scan the probe in Y (in Angstroms) (defaults to fractional coordiantes) )
-* --num-FP (-F) value : number of frozen phonon configurations to calculate (default: 1)
-* --thermal-effects (-te) bool : whether or not to include Debye-Waller factors (thermal effects) (default: True)
-* --occupancy (-oc) bool : whether or not to consider occupancy values for likelihood of atoms existing at each site (default: True)
-* --save-2D-output (-2D) ang_min ang_max : save the 2D STEM image integrated between ang_min and ang_max (in mrads) (default: Off)
-* --save-3D-output (-3D) bool=true : Also save the 3D output at the detector for each probe (3D output mode) (default: On)
-* --save-4D-output (-4D) bool=false : Also save the 4D output at the detector for each probe (4D output mode) (default: Off)
-* --save-DPC-CoM (-DPC) bool=false : Also save the DPC Center of Mass calculation (default: Off)
-* --save-real-space-coords (-rsc) bool=false : Also save the real space coordinates of the probe dimensions (default: Off)
-* --save-potential-slices (-ps) bool=false : Also save the calculated potential slices (default: Off)
-* --nyquist-sampling (-nqs) bool=false : Set number of probe positions at Nyquist sampling limit (default: Off)]
+```
+--input-file (-i) filename :  filename containing the atomic coordinates, see www.prism-em.com/about for details (default: /path/to/atoms.txt)
+--param-file (-pf) filename : filename containing simulation parameters. This optional file can contain any number of parameters in the form of a text file with one entry per line of the form param:value.
+--output-file(-o) filename : output filename (default: output.h5)
+--interp-factor (-f) number : PRISM interpolation factor, used for both X and Y (default: 4)
+--interp-factor-x (-fx) number : PRISM interpolation factor in X (default: 4)
+--interp-factor-y (-fy) number : PRISM interpolation factor in Y (default: 4)
+--num-threads (-j) value : number of CPU threads to use (default: 12)
+--num-streams (-S) value : number of CUDA streams to create per GPU (default: 3)
+--num-gpus (-g) value : number of GPUs to use. A runtime check is performed to check how many are actually available, and the minimum of these two numbers is used. (default: 4)
+--slice-thickness (-s) thickness : thickness of each slice of projected potential (in Angstroms) (default: 2)
+--num-slices (-ns) number of slices: in multislice mode, number of slices before intermediate output is given (default: 0)
+--zstart-slices (-zs) value: in multislice mode, depth Z at which to begin intermediate output (default: 0)
+--batch-size (-b) value : number of probes/beams to propagate simultaneously for both CPU and GPU workers. (default: 1)
+--batch-size-cpu (-bc) value : number of probes/beams to propagate simultaneously for CPU workers. (default: 1)
+--batch-size-gpu (-bg) value : number of probes/beams to propagate simultaneously for GPU workers. (default: 1)
+--help(-h) : print information about the available options
+--pixel-size (-p) pixel_size : size of simulated potential pixel size (default: 0.1). Note this is different from the size of a pixel in the output, which is determined by probe_stepX(Y)
+--pixel-size-x (-px) pixel_size : size of simulated potential pixel size (default: 0.1). Note this is different from the size of a pixel in the output, which is determined by probe_stepX(Y)
+--pixel-size-y (-py) pixel_size : size of simulated potential pixel size (default: 0.1). Note this is different from the size of a pixel in the output, which is determined by probe_stepX(Y)
+--3Dpotential-zsampling (-3DPZ) int : Supersampling factor for potential integration in propagation direction. (default: 16)
+--detector-angle-step (-d) step_size : angular step size for detector integration bins (in mrad) (default: 1)
+--cell-dimension (-c) x y z : size of sample in x, y, z directions (in Angstroms) (default: 20 20 20)
+--tile-uc (-t) x y z : tile the unit cell x, y, z number of times in x, y, z directions, respectively (default: 1 1 1)
+--algorithm (-a) p/m/t : the simulation algorithm to use; either (p)rism, (m)ultislice, or hr(t)em (default: PRISM)
+--energy (-E) value : the energy of the electron beam (in keV) (default: 80)
+--alpha-max (-A) angle : the maximum probe angle to consider (in mrad) (default: 24)
+--potential-bound (-P) value : the maximum radius from the center of each atom to compute the potental (in Angstroms) (default: 3)
+--also-do-cpu-work (-C) bool : boolean value used to determine whether or not to also create CPU workers in addition to GPU ones (default: 1)
+--streaming-mode 0/1 : boolean value to force code to use (true) or not use (false) streaming versions of GPU codes. The default behavior is to estimate the needed memory from input parameters and choose automatically. (default: Auto)
+--probe-step (-r) step_size : step size of the probe for both X and Y directions (in Angstroms) (default: 0.25)
+--probe-step-x (-rx) step_size : step size of the probe in X direction (in Angstroms) (default: 0.25)
+--probe-step-y (-ry) step_size : step size of the probe in Y direction (in Angstroms) (default: 0.25)
+--random-seed (-rs) step_size : random integer number seed
+--probe-xtilt (-tx) value : probe X tilt (in mrad) (default: 0)
+--probe-ytilt (-ty) value : probe X tilt (in mrad) (default: 0)
+--probe-defocus (-df) value : probe defocus (in mrad) (default: nan)
+-C3 value : microscope C3 aberration constant (in Angstrom) (default: nan)
+-C5 value : microscope C5 aberration constant (in Angstrom) (default: nan)
+--probe-semiangle (-sa) value : maximum probe semiangle (in mrad) (default: 20)
+--scan-window-x (-wx) min max : size of the window to scan the probe in X (in fractional coordinates between 0 and 1) (default: 0 0.99999)
+--scan-window-y (-wy) min max : size of the window to scan the probe in Y (in fractional coordinates between 0 and 1) (default: 0 0.99999)
+--scan-window-xr (-wxr) min max : size of the window to scan the probe in X (in Angstroms) (defaults to fractional coordinates) )
+--scan-window-yr (-wyr) min max : size of the window to scan the probe in Y (in Angstroms) (defaults to fractional coordiantes) )
+--num-FP (-F) value : number of frozen phonon configurations to calculate (default: 1)
+--thermal-effects (-te) bool : whether or not to include Debye-Waller factors (thermal effects) (default: True)
+--occupancy (-oc) bool : whether or not to consider occupancy values for likelihood of atoms existing at each site (default: True)
+--3Dpotential (-3DP) bool : whether or not to use 3D integration with subpixel shifting for calculating the atomic potentials (default: True)
+--save-2D-output (-2D) ang_min ang_max : save the 2D STEM image integrated between ang_min and ang_max (in mrads) (default: Off)
+--save-3D-output (-3D) bool=true : Also save the 3D output at the detector for each probe (3D output mode) (default: On)
+--save-4D-output (-4D) bool=false : Also save the 4D output at the detector for each probe (4D output mode) (default: Off)
+--4D-crop (-4DC) bool=false : Crop the 4D output smaller than the anti-aliasing boundary (default: Off)
+--4D-amax (-4DA) value: If --4D-crop, the maximum angle to which the output is cropped (in mrad) (default: 100)
+--save-DPC-CoM (-DPC) bool=false : Also save the DPC Center of Mass calculation (default: Off)
+--save-probe (-probe) int : Also save the complex entrance probe. 0 to not save "off", 1 to save probe intensity, 2 to save complex probe (default: 0 )
+--save-potential-slices (-ps) bool=false : Also save the calculated potential slices (default: Off)
+--save-smatrix (-sm) bool=false : Also save the compact smatrix (warning: can be very large) (default: Off)
+--save-complex (-com) bool=false : Save the complex valued output probes (STEM) or plane waves (HRTEM), instead of integrating intensity. Saves each frozen phonon individually. (default: Off)
+--nyquist-sampling (-nqs) bool=false : Set number of probe positions at Nyquist sampling limit (default: Off)]
+--import-potential (-ips) bool=false : Use precalculated projected potential from import HDF5 file. Must specify -if and -idp (default: Off)]
+--import-smatrix (-ism) bool=false : Use precalculated scattering matrix from import HDF5 file -if and -idp (default: Off)]
+--import-file (-if) filename : File from where to import precalculated potential or smatrix(default: Off)]
+--import-data-path (-idp) string : Datapath from where precalcualted values are retrieved within HDF5 import file (default: none, uses Prismatic save path)
+--xtilt-tem (-xtt) min max step : plane wave tilt selection for HRTEM in x (in mrad) (default: 0 0 1)
+--ytilt-tem (-ytt) min max step : plane wave tilt selection for HRTEM in y (in mrad) (default: 0 0 1)
+--rtilt-tem (-rtt) min max : plane wave tilt selection for HRTEM in radial fashion (in mrad) (default: 0 0)
+--tilt-offset-tem (-tot) xOffset yOffset : offset to select center tilt for HRTEM in (in mrad) (default: 0 0)
+--probe-pos (-pos) filename : filename containing list of arbitrary probe positions. If set, runs custom list of probe positions; data are returned in order of list. See www.prism-em.com/about for details
+--aberrations (-aber) filename : filename containing list of arbitrary aberrations. See www.prism-em.com/about for details
+--max-filesize size : Maximum output file size in gigabytes that Prismatic will be allowed to generate. Default is 2 Gigabytes.
+--probe-defocus-sigma (-dfs) sigma: Run a simulation series over a range of 9 defocii, up to +- 2 sigma in steps 0.5 sigma (in angstroms).
+--probe-defocus-range (-dfr) min max step : Run a simulation series over a range of defocus values, from min to max in step size of step. All input units in Angstroms.
+--matrix-refocus (-mrf) bool : Use matrix refocusing in PRISM simulation (default: Off).
 
+```
 
 <a name ="parameter-file"></a> 
 
@@ -87,6 +109,7 @@ Input parameters may also be provided in the form a plain-text parameter file wi
 **numFP** : number of frozen phonon configurations to average over  
 **sliceThickness** : thickness of potential slices (in Angstroms)  
 **numSlices** : number of slices between intermediate outputs
+**zSampling** : Supersampling factor for potential integration in propagation direction
 **zStart**: depth before intermediate output begins (in Angstroms)
 **cellDimX** : unit cell dimension X (in Angstroms)  
 **cellDimY** : unit cell dimension Y (in Angstroms)  
@@ -105,7 +128,21 @@ Input parameters may also be provided in the form a plain-text parameter file wi
 **probeStepX** : step size of the probe in X direction (in Angstroms)  
 **probeStepY** : step size of the probe in Y direction (in Angstroms)  
 **probeDefocus** : probe defocus (in Angstroms)  
-**C3** : microscope C3 (in Angstroms)    
+**probeDefocus_min** : minimum defocus value used in a defocus series calculation (in Angstroms)
+**probeDefocus_max** : max defocus value used in a defocus series calculation, inclusive (in Angstroms)
+**probeDefocus_step** : step size, in Angstroms, between defocus settings in defocus series calculations.
+**probeDefocus_sigma** : helper for defocus series, creaes a simulation series over a range of 9 defocii, up to +- 2 sigma in steps 0.5 sigma (in angstroms).
+**C3** : microscope C3 (in Angstroms)
+**C5** : microscope C5 (in Angstroms)
+**aberrations_file" : path to file containing list of aberrations to include
+**minXtilt** : minimum x-tilt to include in HRTEM plane wave selection (in mrad)
+**maxXtilt** : maximum x-tilt to include in HRTEM plane wave selection (in mrad)
+**minYtilt** : minimum y-tilt to include in HRTEM plane wave selection (in mrad)
+**maxYtilt** : maximum y-tilt to include in HRTEM plane wave selection (in mrad)
+**minRtilt** : minimum radial tilt to include in HRTEM plane wave selection (in mrad)
+**maxRtilt** : maximum radial tilt to include in HRTEM plane wave selection (in mrad)
+**xTiltOffset** : offset to select center tilt x coordinate for HRTEM (in mrad)
+**yTiltOffset** : offset to select center tilt y coordinate for HRTEM (in mrad)
 **probeSemiangle** : probe convergence semi-angle (in mrad)  
 **detectorAngleStep** : angular step size for detector integration bins (in mrad)  
 **probeXtilt** : probe X tilt (in mrad)  
@@ -118,16 +155,29 @@ Input parameters may also be provided in the form a plain-text parameter file wi
 **scanWindowYMin_r** : lower Y size of the window to scan the probe (in Angstroms)
 **scanWindowXMax_r**: upper X size of the window to scan the probe (in Angstroms)
 **scanWindowYMax_r** : upper Y size of the window to scan the probe (in Angstroms)
+**probes_file** : path to file containing list of probe positions to scan over
 **randomSeed** : number to use for random seeding of thermal effects  
-**algorithm** : simulation algorithm to use, "prism" or "multislice"  
-**includeThermalEffects** : true/false to apply random thermal displacements (Debye-Waller effect)  
+**algorithm** : simulation algorithm to use, "prism" or "multislice" or "hrtem"
+**includeThermalEffects** : true/false to apply random thermal displacements (Debye-Waller effect) 
+**potential3D** : calculate projected potentials using 3D integration and subpixel shifting 
 **alsoDoCPUWork** : true/false to spawn CPU workers in addition to GPU workers  
 **save2DOutput** : save the 2D STEM image integrated between integrationAngleMin and integrationAngleMax  
 **save3DOutput** : true/false Also save the 3D output at the detector for each probe (3D output mode)  
 **save4DOutput** : true/false Also save the 4D output at the detector for each probe (4D output mode)  
-**:saveDPC_CoM** : true/false Also save the DPC center of mass calculation for each probe
-**:savePotentialSlices**  : true/false Also save the projected potential array
-**:nyquistSampling** : set number of probe positions at Nyquist sampling limit
 **integrationAngleMin** : inner detector position (for 2D output mode) (in mrad)  
 **integrationAngleMax** : outer detector position (for 2D output mode) (in mrad)  
 **transferMode** : memory model to use, either "streaming", "singlexfer", or "auto"  
+**saveDPC_CoM** : true/false Also save the DPC center of mass calculation for each probe
+**savePotentialSlices**  : true/false Also save the projected potential array
+**saveSMatrix** : true/false also save the calcualted S-matrix
+**crop4DOutput** : true/false crop the 4D output to a smaller angular range 
+**crop4Damax** : angle to which the 4D output is cropped (mrad)
+**nyquistSampling** : set number of probe positions at Nyquist sampling limit
+**importPotential** : true/false, import the potential from an input file instead of calculating scattering potential
+**importSMatrix** : true/false, import the scattering matrix from an input file instead of calculating
+**saveProbe** : true/false, also save the input probe
+**saveComplexOutputWave** : true/false, save the complex output wave instead of the intensity. Only affects the 4D output and HRTEM simulations.
+**matrixRefocus** : true/false, refocus the scattering matrix for PRISM simulations.
+**importFile** : path to HDF5 file from which potential/S-matrix is imported.
+**importPath** : data path within input file from which potential/S-matrix is imported. Not necessary if using Prismatic simulations as source for input.
+**maxFileSize** : maximum output file size. Defaults to 2Gb. Helpful for preventing accidental launch of large simulations.

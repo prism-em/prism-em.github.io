@@ -5,28 +5,25 @@ subtitle: Download binary installation files for Prismatic
 
 
 
-# Current Version (`Prismatic v1.2.1`)
+# Current Version (`Prismatic v2.0`)
+
+We highly recommend installing the most recent version of Prismatic. The most recent installers can be found directly below; if you are interested in building Prismatic from source, please download the source code instead and follow the installation instructions [here](https://prism-em.com/docs-compiling/).
 
 ---
 ## Installers
 
-### Windows 
-[Prismatic-GPU-v1.2.1.msi](https://github.com/prism-em/prismatic/releases/download/1.2.1/Prismatic-GPU-v1.2.1.msi)
+[Prismatic-GPU_v2.0.0.msi](https://github.com/prism-em/prismatic/releases/download/v2.0/Prismatic-GPU-v2.0.0.msi)
 
-[Prismatic-v1.2.1.msi](https://github.com/prism-em/prismatic/releases/download/1.2.1/Prismatic-v1.2.1.msi)
+[Prismatic-v2.0.0.msi](https://github.com/prism-em/prismatic/releases/download/v2.0/Prismatic-v2.0.0.msi)
+
+### Windows 
 
 ### Mac OS X
-v1.2.1 installer coming soon.
+No installers currently available for Prismatic 2.0 for Mac OS X.
 
 ## Source Code
 [Current Build](http://www.github.com/prism-em/prismatic)
 
-[Prismatic v1.2.1 zip file](https://github.com/prism-em/prismatic/archive/v1.2.1.zip)
-
-[Prismatic v1.2.1 tar file](https://github.com/prism-em/prismatic/archive/v1.2.1.tar.gz)
-
----
----
 ---
 
 # Old Versions
@@ -36,6 +33,10 @@ Please note that there are a variety of known issues with old versions. Installi
 ## Installers
 
 ### Windows 
+[Prismatic-GPU-v1.2.1.msi](https://github.com/prism-em/prismatic/releases/download/1.2.1/Prismatic-GPU-v1.2.1.msi)
+
+[Prismatic-v1.2.1.msi](https://github.com/prism-em/prismatic/releases/download/1.2.1/Prismatic-v1.2.1.msi)
+
 [Prismatic-v1.2.msi](https://github.com/prism-em/prismatic/releases/download/v1.2/Prismatic-v1.2.msi)
 
 [Primatic-GPU-v1.2.msi](https://github.com/prism-em/prismatic/releases/download/v1.2/Prismatic-GPU-v1.2.msi)
@@ -58,6 +59,9 @@ Please note that there are a variety of known issues with old versions. Installi
 [Prismatic-OSX-v1.0.dmg](https://github.com/prism-em/prismatic-binaries/raw/master/Mac/Prismatic-v1.0.dmg.zip)  
 
 ## Source Code
+[Prismatic v1.2.1 zip file](https://github.com/prism-em/prismatic/archive/v1.2.1.zip)
+
+[Prismatic v1.2.1 tar file](https://github.com/prism-em/prismatic/archive/v1.2.1.tar.gz)
 
 [Prismatic v1.2 zip file](https://github.com/prism-em/prismatic/archive/v1.2.zip)
 

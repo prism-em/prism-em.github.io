@@ -8,7 +8,7 @@ title: About the Authors
 
 [Luis Rangel DaCosta](https://scholar.google.com/citations?hl=en&user=U3h_klYAAAAJ) currently a graduate student at UC Berkeley in the department of Materials Science and Engineering, working with Professor Mary Scott. He completed his undergrad at the University of Michigan in the Department of Materials Science and in the School of Music, Theatre and Dance at the University of Michigan. He can be contacted via email at luisrd@berkeley.edu.
 
-[Alex Rakowski](https://scholar.google.com/citations?user=G9MRMyUAAAAJ) is a postdoctoral researcher at the National Center for Electron Microscopy (NCEM) at LBNL. He can be contacted 
+[Dr. Alex Rakowski](https://scholar.google.com/citations?user=G9MRMyUAAAAJ) is a postdoctoral researcher at the National Center for Electron Microscopy (NCEM) at LBNL, where he is working on simulation pipelines and scientific computing workflows for applied machine learning for 4D-STEM. He completed his Ph.D. at the University of Manchester and a previous postdoctoral position at UC Irvine. He can be contacted at arakowski@lbl.gov.
 
 
 ### Past Contributors
