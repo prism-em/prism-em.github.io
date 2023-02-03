@@ -30,5 +30,6 @@ subtitle: Alternatives to Prismatic for STEM simulation
 |  *STEMsalabim*  | Oelerich et al. | CPU par | [STEMsalabim website](http://www.online.uni-marburg.de/stemsalabim/) |
 |  *stemcl*  | Radek, Tenberge, Hilke, Wilde, Peterlechner | OpenCL GPU and CPU | [stemcl repo](https://github.com/stemcl/stemcl) |
 |  `Prismatic`  | Ophus, Pryor, Rangel Dacosta, Brown, et al., | multi CPU GPU, PRISM | [Prismatic website](http://www.prism-em.com) |
+|  *abTEM*  | Madsen, Susi | DFT-enabled, GPU, PRISM | [abTEM website](https://abtem.readthedocs.io/en/latest/) |
 
 
